@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*  before fini load */
+.loader-wrapper { 
+  background-color: rgb(52, 52, 82);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 99;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.loader-wolf {
+  margin: 0 auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  stroke-width: 2.5px;
+  stroke: rgb(255, 255, 255);
+  fill: none;
+  width: 75px;
+  /* animation: wolf 1s ease-in-out; */
+  transform: scale(1);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  @keyframes wolf {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    10% {
+      transform: scale(1.1);
+    }
+    20% {
+      transform: scale(1.1);
+    }
+    70% {
+      opacity: 1;
+    }
+    to {
+      transform: scale(.5);
+      opacity: 0;
+    }
   }
-  to {
-    transform: rotate(360deg);
+  .path-a {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: dash1 10s cubic-bezier(0.22, 1, 0.36, 1) forwards ; */
   }
-}
+
+  @keyframes dash1 {
+    from {
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+  .path-c {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: dash2 3s cubic-bezier(0.76, 0, 0.30, 1) forwards ; */
+    /* animation-delay: 750ms; */
+  }
+  @keyframes dash2 {
+    from {
+      animation-delay: 750ms;
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+
+  .path-b {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: dash2 3s cubic-bezier(0.76, 0, 0.30, 1) forwards ;
+    animation-delay: 1.25s; */
+  }
+  @keyframes dash2 {
+    from {
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
